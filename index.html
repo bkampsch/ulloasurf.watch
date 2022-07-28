@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="assets/styles.css">
+  <link href="https://unpkg.com/video.js/dist/video-js.css" rel="stylesheet">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+  <title>Ulloa Surf Cam</title>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-7XH8E4LYZ6"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-7XH8E4LYZ6');
+  </script>
+
+  <!--<style>
+    .link-container  {
+        border: 5px outset red;
+        background-color: lightblue;
+        text-align: center;
+      }
+  </style> -->
+
+</head>
+
+<body>
+  <div class="root-container">
+    <div class="logo-container">
+      <img class="content-logo-img" src="assets/ulloasurf_logo.png" alt="Ulloa Surf Cam"/>
+    </div>
+
+    <div class="video-container">
+      <!--<iframe width="1280" height="720" src="https://ulloasurf.watch:5443/WebRTCApp/play.html?name=186028858328434972376700" frameborder="0" allowfullscreen></iframe> -->
+
+      <script src="https://unpkg.com/video.js/dist/video.js"></script>
+      <!-- <script src="https://unpkg.com/@videojs/http-streaming/dist/videojs-http-streaming.js"></script> -->
+
+      <video-js id="surf-stream" class="vjs-default-skin vjs-big-play-centered" controls preload="auto" width="2560" height="1440">
+          <source
+          src="https://ulloasurf.watch:5443/LiveApp/streams/672582985995651921376905.m3u8"
+          type="application/x-mpegURL">
+      </video-js>
+
+      <script>
+        var player = videojs('surf-stream', {
+          aspectRatio: '16:9',
+          poster: 'assets/poster.jpg',
+          controlBar: { volumePanel: false }
+        });
+        player.play();
+      </script>
+      
+    </div>
+
+    <!--
+    <div class="row-container">
+      <a href="https://www.wunderground.com/dashboard/pws/KCASANFR1939">Wunderground Wind/Weather Data Link (for timeseries views!)</a>
+    </div>
+    -->
+
+    <div class="ambient-container">
+      <iframe
+        class="ambient-iframe"
+        src="https://ambientweather.net/devices/public/866692f03828b02c8a9b02a27e2eb719?embed=true"
+      >
+      </iframe>
+    </div>
+
+    <br><br>
+    <div class="link-container">
+      <img src="assets/surf_chart_46237.jpeg">
+    </div>
+
+    <br><br>
+    <div class="link-container">
+      <img src="assets/surf_chart_46042.jpeg">
+    </div>
+
+    <br><br>
+    <div class="link-container">
+      <img src="assets/surf_chart_46218.jpeg">
+    </div>
+
+    <br><br>
+    <div class="link-container">
+      <img src="assets/surf_chart_46214.jpeg">
+    </div>
+
+    <div class="link-container">
+      <h1>Links</h1>
+      <div>
+        <h2>Other Surf Cams:</h2>
+        <ul class="a">
+          <li>
+            <a href="https://lawtonsurf.watch/" target="_blank">
+              Lawton Surf Cam
+            </a>
+          </li>
+          <li>
+            <a href="https://www.surfline.com/surf-report/ocean-beach-overview/5842041f4e65fad6a77087f8" target="_blank">
+              Surfline OB Overview
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <div>
+        <h2>Weather and Buoys:</h2>
+        <ul class="a">
+          <li>
+            <a href="https://www.wunderground.com/dashboard/pws/KCASANFR1939" target="_blank">
+              Wunderground page for the weather station
+            </a>
+          </li>
+          <li>
+            <a href="https://www.ndbc.noaa.gov/station_page.php?station=46026" target="_blank">
+              NOAA SF Buoy
+            </a>
+          </li>
+          <li>
+            <a href="http://www.stormsurfing.com/cgi/display2.cgi?a=t22;b=142" target="_blank">
+              Stormsurf SF Bar buoy (for spectral decomp)
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <div>
+        <h2>Forecasts:</h2>
+        <ul class="a">
+          <li>
+            <a href="https://www.surfline.com/surf-forecasts/san-francisco/58581a836630e24c44879010" target="_blank">
+              Surfline San Francisco forecast page
+            </a>
+          </li>
+          <li>
+            <a href="https://forecast.weather.gov/product.php?format=CI&glossary=1&issuedby=MTR&product=AFD&site=MTR&version=1" target="_blank">
+              NOAA Bay Area Forecast discussion
+            </a>
+          </li>
+          <li>
+            <a href="https://www.windy.com/?37.258,-122.679,9" target="_blank">
+              Windy (for wind forecast)
+            </a>
+          </li>
+        </ul>
+      </div>
+
+
+    <!--
+      <div class="link-container">
+      <a href="https://www.windy.com/?37.258,-122.679,9" target="_blank">
+        <span class="link"></span>
+        Windy (for wind forecast)
+      </a>
+    </div>
+  -->
+
+  </div>
+
+</body>
+</html>
