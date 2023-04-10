@@ -136,6 +136,22 @@ theta = theta_0 + dtheta
 phi = phi_0 + dphi
 
 
+
+# now try zoom
+
+# half lens height, where full lens height = 2.8mm (from spec in an ad, probably should check this)
+hs = 1.4e-3
+
+# choose the magnification we want to stick with across all zooms (is this what we want?)
+m = 0.00003
+
+zoom = (np.sqrt(3) * hs * (1/m + 1))/dl
+
+# totally wrong calculation.  
+
+# ALSO, we have between Z:1 and Z:25 for the camera.  but the values we can pass to "zoom" go
+# from 1 to up beyond 200.
+
 goToABS(str(theta),str(phi),'0')
 
 
